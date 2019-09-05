@@ -1,0 +1,44 @@
+.homeSection
+  width: 100vw
+  height: 100vh
+
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  background-size: cover
+  background-position: center center
+
+  animation: kenburns-right 30s ease-out both infinite alternate
+
+  &.lion
+    background-image: url("../assets/lion.png")
+  &.door
+    background-image: url("../assets/door.png")
+  &.sheep
+    background-image: url("../assets/sheep.png")
+
+  &-heading
+    color: white
+    font-size: 8em
+    letter-spacing: 0.2em
+    text-transform: uppercase
+
+    animation: heading 1s ease-in-out 1s forwards
+
+    word-break: break-all
+
+    margin: 0 200px
+
+    min-width: 380px
+
+
+    @media (max-width: 1000px)
+      font-size: 6em
+
+.Navigation-Anchor
+  background-color: white !important
+
+.white
+  color: white

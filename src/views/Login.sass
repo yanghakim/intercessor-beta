@@ -1,0 +1,58 @@
+.login
+  width: 100vw
+  height: 100vh
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background-image: url("../assets/login.jpg")
+  background-size: cover
+
+  &-logo
+    position: absolute
+    left: 30px
+    top: 30px
+
+    width: 15%
+
+  &__wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+    width: 1000px
+    box-shadow: 0 1px 5px black
+
+    animation: fade-in 0.5s ease-in-out forwards
+
+    &__left
+      background-image: url("../assets/cross.png")
+      background-size: cover
+
+      color: white
+
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+      padding: 15%
+
+      &-heading
+        word-wrap: break-word
+
+        margin: 5% 0
+
+        width: 50%
+
+        font-size: 2.4em
+        font-weight: 700
+
+      &-subheading
+        word-wrap: break-word
+
+        width: 80%
+
+        margin-bottom: 5%
+
+        font-weight: 300
+        font-size: 1.2em

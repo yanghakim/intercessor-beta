@@ -1,0 +1,39 @@
+@import "../styles.sass"
+
+.loginForm
+  background: white
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  padding: 15%
+
+  &-checkbox input
+    margin-right: 5px
+
+  &-submit
+    @include submitBtn
+
+    background-color: red
+    color: white
+
+    margin: 5% 0 15% 0
+
+    cursor: pointer
+
+    &:hover
+      animation: vibrate-2 0.3s linear infinite both
+
+    &.register
+      background-color: red
+      color: white
+
+      margin: 5% 0
+
+      cursor: pointer
+
+  &-forgot
+    color: red
+
+    cursor: pointer

@@ -1,0 +1,86 @@
+@import "../styles.sass"
+
+.prayers
+  width: 100vw
+  height: 100vh
+
+  display: grid
+  grid-template-columns: 8vw repeat(3, 1fr) 8vw
+
+  &-lines
+    z-index: -1
+    height: 0
+    width: 1px
+    background-color: grey
+
+    animation: expand-down 1s ease-in-out forwards
+
+  &__list
+    position: absolute
+
+    width: 84vw
+    height: 80vh
+
+    top: 10vh
+
+    margin: 0 8vw
+
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-row-gap: 20px
+
+  &__nav
+    @include nav(true)
+
+  &__leftfooter
+    position: absolute
+    bottom: 50px
+    left: 50px
+    z-index: 2
+
+    &-subheading
+      font-size: 1.2em
+      margin: 5px 0 15px 0
+
+    &-intercede
+      background: white
+      padding: 5px 10px
+      color: black
+      border: 1px solid black
+
+      width: 150px
+
+      animation: heartbeat 4s ease-in-out infinite both
+
+      cursor: pointer
+
+      transition: 1s ease
+
+      &:hover
+        color: black
+        background-color: white
+
+  &__rightfooter
+    position: absolute
+    bottom: 50px
+    right: 50px
+    z-index: 2
+
+    text-align: right
+
+    opacity: 0
+
+    animation: fade-in 0.5s ease-in-out forwards
+
+    &-heading
+      font-size: 1.2em
+      letter-spacing: 4px
+
+    &-subheading
+      font-size: 2em
+      margin: 5px 0 15px 0
+
+    &-choose
+      background: black
+      color: white
+      padding: 10px 20px

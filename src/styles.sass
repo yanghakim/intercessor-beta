@@ -1,0 +1,196 @@
+@mixin nav($black)
+  width: 100vw
+  height: 100px
+
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+  @if $black
+    position: absolute
+
+  opacity: 0
+
+  animation: fade-in 0.5s ease-in-out 2s forwards
+
+  &.exit
+    animation: fade-out 1s ease-in-out forwards
+
+  &__left
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    margin-left: 50px
+
+    width: 150px
+
+    &-back
+      cursor: pointer
+
+    img
+      @if $black
+        filter: invert(100%)
+
+    &-menu
+      transition: transform 2s
+      margin-top: 4px
+      cursor: pointer
+
+      &:hover
+        transform: rotateY(0deg) rotate(90deg)
+
+    &-settings
+      transform: rotateY(0deg) rotate(90deg)
+      transition: transform 2s
+      margin-top: 4px
+
+      cursor: pointer
+
+      &:hover
+        transform: rotateY(0deg) rotate(0deg)
+
+  &-logout
+    color: white
+    @if $black
+      color: black
+    font-family: 'Inconsolata', monospace
+    letter-spacing: 4px
+    font-size: 2em
+    font-weight: 700
+
+    padding: 5px 50px 5px 20px
+
+    cursor: pointer
+
+    transition: 1s ease
+
+    &:hover
+      background-color: white
+      color: black
+
+      @if $black
+        background-color: black
+        color: white
+
+@mixin submitBtn
+  font-family: 'Inconsolata', monospace
+  outline: none
+  border: none
+  padding: 15px
+  font-size: 1em
+  display: inline
+
+@-webkit-keyframes shadow-drop-2-center
+  0%
+    color: black
+    -webkit-text-shadow: 0 0 0 black
+    text-shadow: 0 0 0 black
+  100%
+    color: white
+    -webkit-text-shadow: 2px 2px 2px black
+    text-shadow: 2px 2px 2px black
+
+@keyframes shadow-drop-1.4-center
+  0%
+    color: black
+    -webkit-text-shadow: 0 0 0 black
+    text-shadow: 0 0 0 black
+  100%
+    color: white
+    -webkit-text-shadow: 2px 2px 2px black
+    text-shadow: 2px 2px 2px black
+
+@keyframes slide-in-bottom
+  0%
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+  100%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+
+@keyframes slide-out-bottom
+  0%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+
+  100%
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fade-out
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes kenburns-right
+  0%
+    transform: scale(1) translate(0, 0)
+  100%
+    transform: scale(1.25) translateX(20px)
+
+@keyframes vibrate-2
+  0%
+    transform: translate(0)
+  20%
+    transform: translate(2px, -2px)
+  40%
+    transform: translate(2px, 2px)
+  60%
+    transform: translate(-2px, 2px)
+  80%
+    transform: translate(-2px, -2px)
+  100%
+    transform: translate(0)
+
+@keyframes heartbeat
+  from
+    transform: scale(1)
+    transform-origin: center center
+    animation-timing-function: ease-out
+  5%
+    transform: scale(0.91)
+    animation-timing-function: ease-in
+  8%
+    transform: scale(0.98)
+    animation-timing-function: ease-out
+  16%
+    transform: scale(0.87)
+    animation-timing-function: ease-in
+  22%
+    transform: scale(1)
+    animation-timing-function: ease-out
+
+@keyframes slide-in-left
+  0%
+    transform: translateX(-200%)
+  100%
+    transform: translateX(0)
+
+@keyframes slide-out-left
+  0%
+    transform: translateX(0%)
+  100%
+    transform: translateX(-200%)
+
+@keyframes expand-up
+  0%
+    min-height: 220px
+  100%
+    min-height: 100vh
+    opacity: 1
+
+@keyframes expand-down
+  0%
+    height: 0
+  100%
+    height: 100vh
