@@ -25,6 +25,11 @@
 
     animation: fade-in 0.5s ease-in-out forwards
 
+    @media (max-width: 1100px)
+      width: 80vw
+      grid-template-columns: 1fr
+      box-shadow: none
+
     &__left
       background-image: url("../assets/cross.png")
       background-size: cover
@@ -37,6 +42,10 @@
 
       padding: 15%
 
+      @media (max-width: 1100px)
+        padding: 0 2%
+        background-image: none
+
       &-heading
         word-wrap: break-word
 
@@ -47,6 +56,14 @@
         font-size: 2.4em
         font-weight: 700
 
+        @media (max-width: 1100px)
+          margin: 1% 0
+
+          width: 90%
+
+          font-size: 2em
+          font-weight: 700
+
       &-subheading
         word-wrap: break-word
 
@@ -56,3 +73,10 @@
 
         font-weight: 300
         font-size: 1.2em
+
+        @media (max-width: 1100px)
+          width: 90%
+
+          font-size: 1em
+
+          margin-bottom: 2%
