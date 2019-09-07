@@ -1,69 +1,119 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <br>
+  <a href="https://intercessor-web.herokuapp.com/"><img src="https://raw.githubusercontent.com/yanghakim/intercessor/master/client/public/favicon.png" alt="intercessor" width="200"></a>
+  <br>
+  intercessor
+  <br>
+</h1>
 
-## Available Scripts
+<h4 align="center">A prayer sharing app built upon the <a href="https://twitter.com/mern_io" target="_blank">MERN Stack</a>.
+</h4>
+<p align="center">Landing page: <a href="https://intercessor.page" target="_blank">intercessor.page</a></p>
+<p align="center">
+  <a href="https://scrutinizer-ci.com/g/yanghakim/intercessor/?branch=master">
+    <img src="https://scrutinizer-ci.com/g/yanghakim/intercessor/badges/quality-score.png?b=master"
+         alt="scrutinizer">
+  </a>
+  <a href="https://scrutinizer-ci.com/g/yanghakim/intercessor/?branch=master">
+    <img src="https://scrutinizer-ci.com/g/yanghakim/intercessor/badges/build.png?b=master"
+         alt="scrutinizer">
+  </a>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#what-i-learned">What I Learned</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#you-may-also-like">Related</a>
+</p>
 
-### `npm start`
+![screenshot](https://raw.githubusercontent.com/yanghakim/Portfolio/master/src/images/intweb/intweb-sanct.jpg)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Key Features
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- MERN Stack
+- React-Router
+- Redux Store, Thunk, Persist
+- Authentication (Passport.js)
+- Complex group schemas
+- Filter for favorited groups
+- Color-coded, theme-toggle
 
-### `npm test`
+## How To Use
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  Create an account. Use Google Auth if applicable.
+2.  Enter user info when prompted. Create a user acronym.
+3.  Go to SETTINGS. Search for your friends' GROUPS or create one and invite your friends.
+4.  Choose your path to pray. (For others, yourself, or request prayer)
+5.  Wait at SELAH, or edit the timer.
+6.  (FOR OTHERS) Filter prayers by group or personal requests.
+7.  (REQUEST PRAYER) Send prayer to other users/groups.
 
-### `npm run build`
+## What I Learned
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I : Create React App
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- after 2 weeks of learning Javascript, I started my first react app
+- learned about the utility of components and the virtual DOM
+- adopted SASS as a CSS extension
+- learned and utilized sass variables and mixins
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+II : Server Side Foundation
 
-### `npm run eject`
+- restructuring project to accomodate for server (Node.JS) and client (Javascript) side code
+- installed and configured Express for route handling
+- setup MongoDB
+- installed and configured Mongoose for creating models and querying
+- setup dynamic listening to PORTS (for DEV and PROD)
+- installed and configured Passport for authentication
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+III : Routing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- handle routes with async/await
+- CRUD practices
+- structuring route files for each collection
+- installed Mongoose for creating models and querying
+- setup dynamic listening to PORTS (for DEV and PROD)
+- routes: login, filter prayers, group members, leave group, and many more
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+IV : Redux
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- configure and connect Redux store with components, mapping state to props
+- setup actions, action creators, and reducers
+- redux thunk used for "functional" action creators
+- redux persist used for locally storing states
+- states: user data, user's groups, user's favorite groups
 
-## Learn More
+V : QOL Practices
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- component architecture: breaking down UI by components (login vs register)
+- project architecture: grouping files by functionality (routes vs models) and type (sass vs jsx)
+- naming conventions: BEM class naming
+- routing architecture: breaking up big routes into middlewares
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Credits
 
-### Code Splitting
+This software uses the following open source packages:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [Node.js](https://nodejs.org/)
+- [React.js](https://reactjs.org/)
+- [Passport.js](http://www.passportjs.org/)
+- [Express.js](https://expressjs.com/)
+- [Redux](https://redux.js.org/)
 
-### Analyzing the Bundle Size
+- [Icon made by Freepik from www.flaticon.com](www.flaticon.com)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This software draws design inspiration from:
 
-### Making a Progressive Web App
+- [Visions for the future internet](https://findingctrl.nesta.org.uk/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## You may also like...
 
-### Advanced Configuration
+- [Elysian](https://github.com/yanghakim/elysian) - A Christian Notetaking app (wip)
+- [Ataraxia](https://github.com/yanghakim/ataraxia) - A Christian Personality adventure (wip)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+---
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# intercessor-beta
+> [yanghakim.com](https://www.yanghakim.com) &nbsp;&middot;&nbsp;
+> GitHub [@yanghakim](https://github.com/yanghakim) &nbsp;&middot;&nbsp;

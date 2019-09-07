@@ -44,7 +44,7 @@ class Settings extends Component {
 
   render() {
     if (this.state.exit) {
-      return <Redirect push to="/" />;
+      return <Redirect push to="/home" />;
     }
     return (
       <div className={this.state.settingsClass}>

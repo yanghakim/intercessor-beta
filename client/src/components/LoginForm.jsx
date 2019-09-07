@@ -24,7 +24,7 @@ class LoginForm extends Component {
           <input id="checkbox" type="checkbox" />
           <label for="checkbox">Keep me logged in</label>
         </div>
-        <Link class="loginForm-submit" to="/">
+        <Link class="loginForm-submit" to="/home">
           log in
         </Link>
         <p class="loginForm-forgot">Forgot your username or password?</p>

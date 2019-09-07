@@ -118,7 +118,7 @@ class Home extends Component {
       case "settings":
         return <Redirect push to="/settings" />;
       case "logout":
-        return <Redirect push to="/login" />;
+        return <Redirect push to="/" />;
       default:
         break;
     }
