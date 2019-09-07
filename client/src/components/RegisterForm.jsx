@@ -1,45 +1,127 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import axios from "axios";
+
+import Google from "../assets/google.png";
 
 import "./LoginForm.sass";
 
 class RegisterForm extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      btnText: "join",
+      email: "",
+      password: "",
+      vpassword: "",
+      success: false
+    };
+  }
+
+  onChangeEmail = e => {
+    this.setState({
+      email: e.target.value
+    });
+  };
+
+  onChangePassword = e => {
+    this.setState({
+      password: e.target.value
+    });
+  };
+
+  onChangeVPassword = e => {
+    this.setState({
+      vpassword: e.target.value
+    });
+  };
+
+  resetRegisterBtn = () => {
+    setTimeout(() => {
+      this.setState(() => ({
+        btnText: "join"
+      }));
+    }, 4000);
+  };
+
+  onRegister = async e => {
+    console.log("SDf");
+    e.preventDefault();
+    // Grab state
+    const { email, password, vpassword } = this.state;
+
+    const user = await axios.post("/api/register", {
+      email,
+      password,
+      vpassword
+    });
+
+    if (user.data.success) {
+      this.setState({
+        btnText: user.data.message,
+        success: true
+      });
+    } else {
+      this.setState({
+        btnText: user.data.message
+      });
+      this.resetRegisterBtn();
+    }
+  };
+
   render() {
+    const { btnText, email, password, vpassword } = this.state;
+
+    if (this.state.success) {
+      return <Redirect push to="/newUser" replace />;
+    }
+
     return (
-      <div class="loginForm">
-        <h2 class="loginForm-heading">Join Intercessor</h2>
-        <p class="loginForm-subheading">
+      <div className="loginForm">
+        <h2 className="loginForm-heading">Join Intercessor</h2>
+        <p className="loginForm-subheading">
           Already an Intercessor?
-          <Link to="/login">
+          <Link to="/">
             <span> Log in</span>
           </Link>
         </p>
         <input
           type="text"
-          class="loginForm-input"
-          placeholder="Pick a Username"
-        />
-        <input
-          type="text"
-          class="loginForm-input"
+          className="loginForm-input"
           placeholder="Add your Email"
+          value={email}
+          onChange={this.onChangeEmail}
         />
         <input
           type="password"
-          class="loginForm-input"
+          className="loginForm-input"
           placeholder="Choose a Password"
+          value={password}
+          onChange={this.onChangePassword}
         />
         <input
           type="password"
-          class="loginForm-input"
+          className="loginForm-input"
           placeholder="Confirm Password"
+          value={vpassword}
+          onChange={this.onChangeVPassword}
         />
-        <div class="loginForm-checkbox">
+        <div className="loginForm-checkbox">
           <input id="checkbox" type="checkbox" />
-          <label for="checkbox">Keep me logged in</label>
+          <label htmlFor="checkbox">Keep me logged in</label>
         </div>
-        <button type="submit" class="loginForm-submit register">
-          join
+        <a className="loginForm-google" href="/auth/google">
+          <img
+            className="loginForm-google-img"
+            src={Google}
+            width="20"
+            alt="google"
+          />
+          login with Google
+        </a>
+        <button className="loginForm-submit register" onClick={this.onRegister}>
+          {btnText}
         </button>
       </div>
     );

@@ -15,6 +15,10 @@ class App extends Component {
         <Route exact path="/" component={Login} />
         <Route path="/home" component={Home} />
         <Route
+          path="/newUser"
+          render={props => <Login {...props} newUser={true} />}
+        />
+        <Route
           path="/register"
           render={props => <Login {...props} register={true} />}
         />
